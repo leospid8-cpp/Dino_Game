@@ -1,6 +1,7 @@
 import sys
 import pygame 
 
+from pathlib import Path
 from Impostazzioni import Impostazzioni 
 from Dinosauro import Dinosauro
 
@@ -11,7 +12,8 @@ class dino_game:
         pygame.init()  
         self.clock = pygame.time.Clock()  
         self.impostazzione = Impostazzioni()
-        self.immagineSfondo = pygame.image.load("C:\\Users\\leosp\\OneDrive\\Desktop\\lezione python\\gioco\\lezzione 5 (immagine di sfondo)\\immagini\\sfondo.png")
+        base_path = Path(__file__).parent
+        self.immagineSfondo = pygame.image.load(base_path / "immagini" / "sfondo.jpg")
         self.sfondo = pygame.transform.scale(self.immagineSfondo, (self.impostazzione.schermata_larghezza, self.impostazzione.schermata_altezza)) 
         self.schermata = pygame.display.set_mode(
             (self.impostazzione.schermata_larghezza, self.impostazzione.schermata_altezza)

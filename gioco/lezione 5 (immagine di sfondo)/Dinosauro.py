@@ -8,7 +8,7 @@ class Dinosauro:
         self.schermata_rettangolo = Dino_Game.schermata.get_rect() 
 
         base_path = Path(__file__).resolve().parent
-        immagine = pygame.image.load(base_path / "immagini" / "dino.png") 
+        immagine = pygame.image.load(base_path / "immagini" / "dinoF.png") 
         self.immagine = pygame.transform.scale(immagine, (110, 110)) 
         self.rettangolo = self.immagine.get_rect() 
         
