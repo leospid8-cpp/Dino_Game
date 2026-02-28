@@ -38,8 +38,8 @@ class dino_game:
                 sys.exit()
             elif event.type == pygame.KEYDOWN: #controlla se viene premuto un tasto
                 if event.key == pygame.K_UP: #controlla se il tasto premuto è quello per il salto
-                    
-                     if not self.dinosauro.saltando:
+                    #avvia il salto solo se il dinosauro è attera
+                    if not self.dinosauro.saltando: 
                         self.dinosauro.saltando = True
                         self.dinosauro.velocita_y = self.dinosauro.forza_salto
 
