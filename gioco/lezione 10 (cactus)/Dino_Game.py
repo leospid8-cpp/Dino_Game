@@ -4,6 +4,7 @@ from pathlib import Path
 
 from Impostazzioni import Impostazzioni 
 from Dinosauro import Dinosauro
+from Cactus import Cactus #importazione della classe Cactus dal file Cactus.py
 
 class dino_game: 
     
@@ -23,12 +24,14 @@ class dino_game:
         pygame.display.set_caption("Dino Game") 
 
         self.dinosauro = Dinosauro(self) 
+        self.cactus = Cactus(self) #creazione di un'istanza della classe Cactus
 
     def esegui_gioco(self): 
         while(True): 
 
             self.controlla_eventi() 
             self.dinosauro.aggiorna()
+            self.cactus.aggiorna() #aggiornamento del cactus
             self.aggiorna_schermo() 
             self.clock.tick(60) 
 
@@ -44,12 +47,13 @@ class dino_game:
                         self.dinosauro.velocita_y = self.dinosauro.forza_salto
                 elif event.key == pygame.K_ESCAPE: 
                     sys.exit()
-                elif event.key == pygame.K_F11:  #se viene premuto F11, attiva o disattiva la modalità schermo intero
+                elif event.key == pygame.K_F11: 
                     pygame.display.toggle_fullscreen()
     
     def aggiorna_schermo(self): 
         self.schermata.blit(self.sfondo, (0, 0))
         self.dinosauro.disegna()
+        self.cactus.disegna() #disegno del cactus
         pygame.display.flip()
 
 if __name__ == "__main__": 

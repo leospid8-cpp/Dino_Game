@@ -2,7 +2,7 @@ import sys
 import pygame 
 
 from Impostazzioni import Impostazzioni 
-from Dinosauro import Dinosauro
+from Dinosauro import Dinosauro #importa la classe Dinosauro dal file Dinosauro.py
 
 class dino_game: 
     

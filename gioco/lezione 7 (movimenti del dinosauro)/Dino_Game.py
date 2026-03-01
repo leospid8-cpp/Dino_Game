@@ -14,7 +14,7 @@ class dino_game:
         self.impostazzione = Impostazzioni()
 
         base_path = Path(__file__).parent
-        self.immagineSfondo = pygame.image.load(base_path / "immagini" / "sfondo.png")
+        self.immagineSfondo = pygame.image.load(base_path / "immagini" / "pixelArt.jpg")
         self.sfondo = pygame.transform.scale(self.immagineSfondo, (self.impostazzione.schermata_larghezza, self.impostazzione.schermata_altezza)) 
         self.schermata = pygame.display.set_mode(
             (self.impostazzione.schermata_larghezza, self.impostazzione.schermata_altezza)
