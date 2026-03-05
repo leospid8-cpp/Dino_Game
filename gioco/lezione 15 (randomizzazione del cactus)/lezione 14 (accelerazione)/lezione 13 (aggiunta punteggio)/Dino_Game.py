@@ -26,13 +26,13 @@ class dino_game:
         pygame.display.set_caption("Dino Game") 
 
         self.dinosauro = Dinosauro(self) 
-        self.cactus = [Cactus(self)]
+        self.cactus = [Cactus(self)] #lista dei cactus presenti nel gioco
         self.mostra_hitbox_test = True  
 
     def get_hitbox(self):
         hitbox_dino = self.dinosauro.rettangolo.inflate(-70, -40)  
-        hitbox_cactus = []
-        for c in self.cactus:
+        hitbox_cactus = [] #creazione della lista delle hitbox dei cactus
+        for c in self.cactus: #aggiunge nella lista ogni hitbox di ogni cactus
             hitbox = c.rettangolo.inflate(-50, -30)  
             hitbox_cactus.append(hitbox)
         return hitbox_dino, hitbox_cactus
@@ -76,7 +76,7 @@ class dino_game:
 
         hitbox_dino, hitbox_cactus = self.get_hitbox()  
 
-        for hitbox in hitbox_cactus:
+        for hitbox in hitbox_cactus: #controlla che nessuno dei cactus stia toccando il dinosauro 
             if hitbox_dino.colliderect(hitbox): 
                 print("Hai perso!") 
                 sys.exit() 
